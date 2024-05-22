@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>World Health Organization (WHO)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="health, diseases">
+    <link rel="stylesheet" href="who.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    
+  </head>
+  <body>
+    <div id="navs">  
+       <div id="global">
+      <a href="#">Global</a>
+      <select id="regs">
+        <option value="regions">Regions</option>
+      </select>
+    </div>
+    <div id="search">
+      <i class='bx bx-search'></i>
+  </div>
+    <select id="lan">
+      <option value="Language">Select Language</option>
+    </select>
+  </div>
+  </div>
+  <div id="logo">
+  <img src="data:image/png;base64,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">
+</div>
+<br><br><br><br>
+<div id="navbar">
+  <div id="home">
+    <i class='bx bx-home'></i>
+  
+  <select id="topics">
+    <option value="Health Topics">Health Topics</option>
+  </select>
+  <select id="countries">
+    <option value="countries">Countries</option>
+  </select>
+  <select id="news">
+    <option value="newsroom">Newsroom</option>
+  </select>
+  <select id="emergency">
+    <option value="Emergencies">Emergencies</option>
+  </select>
+  <select id="data">
+    <option value="data">Data</option>
+  </select>
+  <select id="about">
+    <option value="about">About WHO</option>
+  </select> 
+  </div>
+</div>
+  
+
+<div id="nav-img">
+ <img src="https://cdn.who.int/media/images/default-source/who_homepage/boy-in-unrwa-shelter-in-southern-gaza.tmb-1920v.jpg?sfvrsn=a544fa21_1">
+  <div id="nav-txt">
+    <br><br><br><br><br><br><br><br><br>
+    <span id="conf">Conflict in Israel and the occupied Palestinian</span>
+       <br>
+       <br>
+       <span id="terr">territory</span>
+    <br><br><br>
+    
+    <div id="nav-btn">
+
+    <button type="button" id="read">Read More</button>
+  </div>
+  <div id="crd">
+    <button type="button" id="credits">Credits   +</button>
+  </div>
+  </div>
+
+</div>
+<br><br>
+
+<div id="latest-1">
+  <br><br>
+  <br>
+  <div id="latest-">
+    <h1>Latest new from WHO</h1>
+  </div>
+  <div id="all"><h1>All <i class='bx bx-right-arrow-alt'></i></h1>
+ 
+
+</div>
+
+</div>
+<hr>
+<br><br><br>
+<div id="latest-news">
+  <div id="latest-img">
+    <br>
+  <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsiJvBlSfRsE5dXRU-jMOvFnhm50VFtneGzA&usqp=CAU">
+  <br>
+  <div id="latest-img-txt">  <p>14 December 2023 | News release</p>
+  <h4>Urgent action needed to protect children and prevent the uptake of e-cigaretes</h4>
+</a> </div>
+ 
+</div>
+<div id="biker">
+  <a href="#"><img src="https://cdn.who.int/media/images/default-source/infographics/road-safety/who_059700.tmb-1920v.jpg?sfvrsn=7feed2d8_5"> <br>
+ <div id="biker-txt">
+    <p>13 December 2023 | News release</p>
+<h4>Despite notable progress, road safety remains urgent global issue</h4>  </a></div>
+</div>
+<div id="inj">
+<a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqvPIdUPcbPNj1XoUVEJOV04NynZsh23HURw&usqp=CAU"><br>
+  <div id="inj-txt">
+ <p>13 December 2023 | News release</p>
+<h4>Statement on the antigen composition of COVID-19 vaccines</h4></div></a> 
+</div>
+<div id="healt">
+  <a href="#"><img src="https://www.who.int/images/default-source/departments/phc/maternal-and-child-health-campaign-services.tmb-1920v.jpg?Culture=en&sfvrsn=e91d6465_5"> 
+    <br><div id="healt-txt">
+  <p>13 December 2023 | News release</p>
+<h4>Universal health coverage day 2023 focuses on building resilience of health systems</h4></div> </a>
+    </div>
+  </div>
+  
+<div id="headlines">
+  <br><br><br>
+ <div id="headlines-1">
+  <br><br>
+  <h1>
+    Latest on Emergencies </h1>
+    </div>
+    <div id="all"><h1>All <i class='bx bx-right-arrow-alt'></i>
+  </h1>
+
+</div>
+</div>
+<hr>
+<section id="emergencies">
+  <div id="emerg">
+    <div id="emergency-txt">
+      <p>Executive Board Special Session</p>
+      <div id="emer-img">
+        <br>
+        <a href="#"><img src="https://cdn.who.int/media/images/default-source/who_homepage/briefing-during-executive-board.tmb-sm.jpg?sfvrsn=38ed7020_3"> </a>
+        <div id="emer-btn">
+          <button type="button" id="learn">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="influenza">
+    <div id="emergency-txt">
+      <p>Influenza A in the United Kingdom</p>
+      <div id="emer-img">
+        <br>
+        <a href="#"><img src="https://cdn.who.int/media/images/default-source/who_homepage/laboratory-staff-testing-for-antibodies-against-the-influenza-virus.tmb-sm.jpg?sfvrsn=4c9d21fd_2"> </a>
+        <div id="emer-btn">
+          <button type="button" id="outbreak">Read the Diseases Outbreak <br> News</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="respiratory">
+    <div id="emergency-txt">
+      <p>Respiratory illnesses in China</p>
+      <div id="emer-img">
+        <br>
+        <a href="#"><img src="https://cdn.who.int/media/images/default-source/who_homepage/laboratory_technician_checking_records_community_health_centre_china.tmb-sm.jpg?sfvrsn=6b9f967c_3"> </a> 
+        <div id="emer-btn">
+          <button type="button" id="outbreak">Read the Diseaseas Outbreak <br> News </button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div id="covid">
+      <div id="emergency-txt">
+        <p>Covid-19</p>
+        <div id="emer-img">
+          <br>
+          <a href="#"><img src="https://cdn.who.int/media/images/default-source/who_homepage/nurse-with-covid-vaccine-vial.tmb-sm.jpg?sfvrsn=f3c5d966_3"> </a>
+          <div id="emer-btn">
+            <button type="button" id="outbreak">
+              Read the Latest Update 
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</section>
+<section id="road-safety">
+  <div id="roadsafety">
+    <h1>Road safety <br></h1>
+  <div id="road-img">
+   <a href="#"> <img src="https://cdn.who.int/media/images/default-source/health-topics/road-traffic-injuries/image-16-copyright-istock-leopatrizi.jpg?sfvrsn=b884529_3"></a>
+  <div id="biker-txt">
+   <p><a href="#">Read the Fact Sheet</a></p>
+</div>
+  </div>
+  </div>
+  <div id="vision">
+    <div id="roadsafety">
+      <h1>Children's Vision</h1>
+      <div id="road-img">
+        <a href="#"><img src="https://cdn.who.int/media/images/default-source/who-webinars-library/science-in-5---ep108---child-vision.jpg?sfvrsn=cedc15c1_3"> </a>
+        <div id="biker-txt">
+        <p><a href="#">Listen to the latest podcast </a> </p>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="misc">
+    <div id="roadsafety">
+      <h1>Preventing Sexual Misconduct</h1>
+      <div id="road-img">
+        <a href="#"><img src="https://cdn.who.int/media/images/default-source/initiatives/prseah/whatsapp-image-2021-08-21-at-17.17.52-(3).jpeg?sfvrsn=826d7380_5"> </a>
+     <div id="biker-txt">
+        <p><a href="#">Learn how WHO is tackling sexual misconduct</a> </p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<br><br><br>
+<section id="road-safety-2">
+  <div id="roadsafety">
+    <h1>WHO video channel</h1>
+    <div id="road-img">
+      <a href="#"><img src="https://cdn.who.int/media/images/default-source/who-webinars-library/camera-interview.jpg?sfvrsn=58dbefbe_16"> </a>
+    <div id="biker-txt">
+      <p><a href="#">Watch the videos</a> </p>
+    </div>
+</div>
+  </div>
+  
+  
+    <div id="roadsafety">
+    <h1>Publications</h1>
+    <div id="road-img">
+      <a href="#"><img src="https://cdn.who.int/media/images/default-source/publications/publications-hero-image-thumb.jpg?sfvrsn=8174ac48_7"> </a>
+    <div id="biker-txt">
+      <p><a href="#">Find a Publication</a> </p>
+    </div>
+</div>
+  </div>
+
+  
+  
+    <div id="roadsafety">
+    <h1>Director-General's Speeches</h1>
+    <div id="road-img">
+      <a href="#"><img src="https://cdn.who.int/media/images/default-source/occupational-health-2/tedros-video-thumb.png?sfvrsn=51cc514_12"> </a>
+   <div id="biker-txt">
+      <p><a href="#">Read the speeches</a> </p>
+    </div>
+  </div>
+  </div>
+  
+
+
+</section>
+<br><br><br>
+
+<section id="campaigns">
+  <div id="campaign-txt">
+    <h1>Campaigns All<i class='bx bx-right-arrow-alt'></i></h1>
+    
+    <div id="campaign-img">
+      <br>
+      <a href="#"><img src="https://cdn.who.int/media/images/default-source/who-campaigns/universal-health-coverage-day/uhc-2023/20220425_darfur_hcf_10.jpg?sfvrsn=ddf5f431_7">
+        <div id="uni-txt">
+      <a href="#"><h3>Universal Health Coverage Day</h3>
+      </a>
+      <p>12 December</p>
+      </div>
+      <br><br><br>
+
+      <div id="annv">
+        <div id="campaign-img">
+          <a href="#"><img src="https://cdn.who.int/media/images/default-source/who-campaigns/who75/who75-hero-banner.png?sfvrsn=df85f627_22">
+           </a>
+           <div id="uni-txt">
+            <a href="#"><h3>WHO's 75th Anniversary</h3> </a>
+            <p>April 2023-May 2024</p>
+           </div>
+        </div>
+      </div>
+    </div>
+    
+      </div>
+    
+
+</section>
+
+</section>
+<br><br><br>
+<div id="footers">
+  <br><br><br><br><br>
+  <div id="foot">
+    <br><br><br>
+    <h4>Regions</h4>
+    <br>
+    <ul>
+      <li><a href="#">Africa</a> </li>
+      <li><a href="#">Americas</a> </li>
+      <li><a href="#">Eastern Mediterranean</a> </li>
+      <li><a href="#">Europe</a> </li>
+      <li><a href="#">South-East Asia</a> </li>
+      <li><a href="#">Weatern Pacific</a> </li>
+    </ul>
+  </div>
+  <div id="foot">
+    <br><br><br>
+    <h4>Policies</h4>
+    <br><br>
+    <ul>
+      <li><a href="#">Cyber Security</a> </li>
+      <li><a href="#">Ethics</a> </li>
+      <li><a href="#">Permissions and Licensing</a> </li> 
+      <li><a href="#">Preventing Sexual Exploitation</a> </li>
+      <li><a href="#">Terms of Use</a> </li>
+    </ul>
+  </div>
+  <div id="foot">
+    <br><br><br>
+    <h4>About Us</h4>
+    <br><br>
+    <ul>
+      <li><a href="#">Careers</a> </li>
+      <li><a href="#">Library</a> </li>
+      <li><a href="#">Procurement</a> </li>
+      <li><a href="#">Publications</a> </li>
+      <li><a href="#">Frequently Asked Questions</a> </li>
+      <li><a href="#">Contact Us</a> </li>
+    </ul>
+  </div>
+  <div id="newsletter">
+    <br><br><br><br><br><br>
+    <button type="button" id="newsl">Subscribe to our newsletter</button>
+  </div>
+  </div>
+  <div id="foot-img">
+    <img src="World-Health-Organization-WHO-Logo-removebg-preview (1).png">
+    <br><br><br>
+    
+  </div>
+  <div id="footer">
+    <br><br><br>
+    <h5>Privacy Policy</h5>
+<div id="s-media">
+  <a href="#"><i class='bx bxl-youtube' style='color:#ffffff'></i></a>
+  <a href="#"><i class='bx bxl-twitter' style='color:#ffffff'></i></a>
+  <a href="#"><i class='bx bxl-facebook' style='color:#ffffff'></i></a>
+  <a href="#"><i class='bx bxl-instagram' style='color:#ffffff' ></i></a>
+  <a href="#"><i class='bx bxl-linkedin-square' style='color:#ffffff'></i></a>
+  <a href="#"><i class='bx bxl-snapchat' style='color:#ffffff'></i></a>
+  <a href="#"><i class='bx bxl-tiktok' style='color:#ffffff'  ></i></a>
+</div>
+<div id="copy">
+  &copy; 2023 WHO
+</div>
+</div>
+  
+</div>
+
+
+  </body>
+</html>
